@@ -10,11 +10,7 @@ public class HibernateFactory {
 
     static {
         Configuration cfg = new Configuration().configure();
-        StandardServiceRegistryBuilder builder =
-                new StandardServiceRegistryBuilder()
-                        .applySettings(cfg.getProperties());
-
-        sessionFactory = cfg.buildSessionFactory(builder.build());
+        sessionFactory = cfg.buildSessionFactory();
     }
 
     public static SessionFactory getSessionFactory() {
