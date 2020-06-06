@@ -1,6 +1,8 @@
 package org.tyaa.javaee.hibernate.entity;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 public class User {
 
@@ -10,6 +12,7 @@ public class User {
     private String lastName;
     private Role role;
     private UserDetails userDetails;
+    private Set<Repository> repositories = new HashSet<>(0);
 
     public User() {}
 
@@ -63,5 +66,13 @@ public class User {
 
     public void setUserDetails(UserDetails userDetails) {
         this.userDetails = userDetails;
+    }
+
+    public Set<Repository> getRepositories() {
+        return repositories;
+    }
+
+    public void setRepositories(Set<Repository> repositories) {
+        this.repositories = repositories;
     }
 }

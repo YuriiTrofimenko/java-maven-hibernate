@@ -8,10 +8,11 @@
         <property name="connection.password">root</property>
         <property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
         <property name="swow_sql">true</property>
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
 
         <mapping resource="role.cfg.xml" />
         <mapping resource="user_details.cfg.xml" />
+        <mapping resource="repository.cfg.xml" />
         <mapping resource="user.cfg.xml" />
     </session-factory>
 </hibernate-configuration>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="org.tyaa.javaee.hibernate.entity.User" table="User">
+    <class name="org.tyaa.javaee.hibernate.entity.User" table="Users">
         <id name="id" column="id">
             <generator class="native" />
         </id>
@@ -12,5 +12,9 @@
             <column name="role_id" not-null="true" />
         </many-to-one>
         <one-to-one name="userDetails" class="org.tyaa.javaee.hibernate.entity.UserDetails"/>
+        <set name="repositories" table="UserRepository" lazy="true" inverse="false">
+            <key column="user_id" />
+            <many-to-many column="repository_id" class="org.tyaa.javaee.hibernate.entity.Repository" />
+        </set>
     </class>
 </hibernate-mapping>
