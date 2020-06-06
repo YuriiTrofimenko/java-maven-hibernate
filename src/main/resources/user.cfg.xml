@@ -11,5 +11,6 @@
         <many-to-one name="role" class="org.tyaa.javaee.hibernate.entity.Role">
             <column name="role_id" not-null="true" />
         </many-to-one>
+        <one-to-one name="userDetails" class="org.tyaa.javaee.hibernate.entity.UserDetails"/>
     </class>
 </hibernate-mapping>

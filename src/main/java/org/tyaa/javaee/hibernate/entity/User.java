@@ -1,5 +1,7 @@
 package org.tyaa.javaee.hibernate.entity;
 
+import java.io.Serializable;
+
 public class User {
 
     private long id;
@@ -7,6 +9,7 @@ public class User {
     private String firstName;
     private String lastName;
     private Role role;
+    private UserDetails userDetails;
 
     public User() {}
 
@@ -52,5 +55,13 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public UserDetails getUserDetails() {
+        return userDetails;
+    }
+
+    public void setUserDetails(UserDetails userDetails) {
+        this.userDetails = userDetails;
     }
 }
