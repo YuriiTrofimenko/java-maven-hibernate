@@ -6,6 +6,7 @@ public class User {
     private int age;
     private String firstName;
     private String lastName;
+    private Role role;
 
     public User() {}
 
@@ -43,5 +44,13 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

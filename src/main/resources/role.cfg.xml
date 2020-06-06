@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.tyaa.javaee.hibernate.entity.Role" table="Role">
+        <id name="id" column="id">
+            <generator class="native" />
+        </id>
+        <property name="title" column="title" type="string" />
+        <set name="users" table="User">
+            <key>
+                <column name="role_id" not-null="true" />
+            </key>
+            <one-to-many class="org.tyaa.javaee.hibernate.entity.User" />
+        </set>
+    </class>
+</hibernate-mapping>
